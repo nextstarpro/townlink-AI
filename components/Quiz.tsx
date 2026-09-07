@@ -53,7 +53,7 @@ export default function Quiz() {
     <div id="quiz" className="border-y-2 border-brand-blue-ink bg-white">
       {/* Ledger-style header */}
       <div className="flex items-center justify-between border-b border-brand-green-line px-4 py-2 font-mono text-[11px] uppercase tracking-wider text-brand-green-ink">
-        <span>form · audit intake</span>
+        <span>form · estimate intake</span>
         <span>{step < 4 ? `step ${step} of 3` : "complete"}</span>
       </div>
 
@@ -167,7 +167,7 @@ export default function Quiz() {
                 disabled={submitting}
                 className="bg-cta px-7 py-4 font-semibold text-cta-fg shadow-cta transition hover:bg-cta-hover hover:shadow-cta-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cta-ring disabled:opacity-60"
               >
-                {submitting ? "Sending" : "Send my audit"}
+                {submitting ? "Sending" : "Send my estimate"}
               </button>
               <button
                 type="button"

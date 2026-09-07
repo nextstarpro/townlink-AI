@@ -2,7 +2,18 @@
   "permissions": {
     "allow": [
       "Bash(python *)",
-      "WebFetch(domain:kuberns.com)"
+      "WebFetch(domain:kuberns.com)",
+      "Bash(git -C \"D:/WORKSPACE/Townlink AI\" log --oneline main -10)",
+      "Bash(git -C \"D:/WORKSPACE/Townlink AI\" log --oneline dev -10)",
+      "Bash(git -C \"D:/WORKSPACE/Townlink AI\" diff --name-only main..dev)",
+      "Bash(git -C \"D:/WORKSPACE/Townlink AI\" show main:app/page.tsx)",
+      "Bash(git -C \"D:/WORKSPACE/Townlink AI\" show main:components/LedgerTape.tsx)",
+      "Bash(git -C \"D:/WORKSPACE/Townlink AI\" show dev:components/LedgerTape.tsx)",
+      "Bash(git -C \"D:/WORKSPACE/Townlink AI\" show dev:app/globals.css)",
+      "Bash(git switch *)",
+      "Bash(npx tsc *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)"
     ]
   },
   "enabledPlugins": {

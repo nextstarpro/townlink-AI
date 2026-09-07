@@ -13,9 +13,9 @@ const BLEED = [
     stat: "40%",
   },
   {
-    line: "web lead cools to room temperature",
-    detail: "After five minutes of silence, the odds a web lead converts drop by 80%. Speed-to-lead isn't a metric — it's the metric.",
-    stat: "80%",
+    line: "a form comes in at 9pm — by 10am they booked the next guy",
+    detail: "Every hour you don't reply, the odds you win the job drop. First shop to call back usually gets it.",
+    stat: "1st",
   },
   {
     line: "old customer list sitting in a spreadsheet",
@@ -38,7 +38,7 @@ const INSTALLS = [
       "One system watches your phone line, texts, web forms, and inbox. Every new lead gets a call answered, a text back, and a confirmation email with a calendar link — inside 60 seconds. Books straight into Google or Outlook. The day's roster hits your phone before coffee.",
   },
   {
-    name: "Database reactivation sprint",
+    name: "Old-list text-back",
     outcome:
       "A one-off AI text campaign against your dormant list. Personalized, sent at a real hour on a real day. Booked jobs — not blasted texts.",
   },
@@ -56,7 +56,7 @@ const FAQ = [
   },
   {
     q: "What actually happens in the first 14 days?",
-    a: "Days 1–3: reactivation sprint drafted against your list and sent. Days 4–10: your receptionist's voice is tuned to your business and integrations are wired in. Days 10–14: dry-run against test calls, then flip live. You approve every step.",
+    a: "Days 1–3: the text-back to your old list gets drafted and sent. Days 4–10: your receptionist's voice is tuned to your business and integrations are wired in. Days 10–14: dry-run against test calls, then flip live. You approve every step.",
   },
   {
     q: "Will callers know it's a robot?",
@@ -65,6 +65,10 @@ const FAQ = [
   {
     q: "Do I need to switch software?",
     a: "No. We work with your current phone number, calendar (Google or Outlook), and list (Airtable, Sheets, or your CRM). Your team doesn't log into anything new.",
+  },
+  {
+    q: "Do you handle Spanish-speaking callers?",
+    a: "Yes. The receptionist detects the language on the first hello and answers in English or Spanish. Either way, callers can ask for a human and we hand off cleanly.",
   },
 ];
 
@@ -86,7 +90,7 @@ export default function Home() {
             href="#audit"
             className="bg-cta px-5 py-2.5 text-sm font-semibold text-cta-fg shadow-cta transition hover:bg-cta-hover"
           >
-            Book my free missed-call audit
+            Get my estimate
           </a>
         </div>
       </header>
@@ -108,14 +112,15 @@ export default function Home() {
             done-for-you · we build it, wire it into your existing phone + calendar, and run it
           </p>
           <p className="mt-6 max-w-[54ch] text-lg text-text-muted md:text-xl">
-            A 24/7 AI receptionist that picks up in 30 seconds, books straight to your calendar, and
-            texts your old customer list back to life. We wire it into the phone number and
-            calendar you already use. You approve the voice. Your team doesn't touch a thing.
+            A 24/7 AI receptionist that picks up on the second ring, books straight to your calendar,
+            and texts your old customer list and books the ones ready to buy again. We wire it into
+            the phone number and calendar you already use. You approve the voice. Your team doesn't
+            touch a thing.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-6">
             <a href="#audit" className="btn-hero-cta">
-              Book my free missed-call audit →
+              Get my missed-call estimate →
             </a>
           </div>
 
@@ -134,7 +139,7 @@ export default function Home() {
         <aside aria-label="Live intake sample">
           <LedgerTape />
           <p className="mt-3 font-mono text-[11px] uppercase tracking-wider text-slate-500">
-            sample intake · anonymized · naperville dental office
+            sample intake · anonymized · addison HVAC company
           </p>
         </aside>
       </section>
@@ -143,7 +148,7 @@ export default function Home() {
       <section aria-labelledby="bleed" className="border-b border-brand-green-line py-20 md:py-28">
         <p className="seq mb-4">002 · what's leaking</p>
         <h2 id="bleed" className="max-w-[20ch] font-display text-4xl font-extrabold md:text-5xl">
-          Four quiet holes in a service business, before lunch.
+          Four ways money walks out the door every day.
         </h2>
 
         <ol className="mt-12 border-t border-brand-green-line">
@@ -181,7 +186,7 @@ export default function Home() {
               id="qw"
               className="max-w-[18ch] font-display text-4xl font-extrabold text-brand-blue-ink md:text-5xl"
             >
-              The reactivation sprint. Old list. New bookings. Inside seven days.
+              The old-list text-back. New bookings inside seven days.
             </h2>
             <p className="mt-6 max-w-[54ch] text-text-body">
               Before we touch your phones, we run one AI text campaign against the customer list
@@ -196,7 +201,7 @@ export default function Home() {
 
           <div className="border border-brand-green-line bg-white">
             <div className="flex items-center justify-between border-b border-brand-green-line px-5 py-2.5 font-mono text-[11px] uppercase tracking-wider text-brand-green-ink">
-              <span>reactivation · timeline</span>
+              <span>text-back · timeline</span>
               <span>7 days</span>
             </div>
             <ol className="divide-y divide-brand-green-line">
@@ -223,7 +228,7 @@ export default function Home() {
           id="install"
           className="max-w-[24ch] font-display text-4xl font-extrabold md:text-5xl"
         >
-          One receptionist. One reactivation engine. Zero new software.
+          One receptionist. One text-back to your old list. Zero new software.
         </h2>
 
         <ol className="mt-12 border-t border-brand-green-line">
@@ -250,14 +255,14 @@ export default function Home() {
         </p>
       </section>
 
-      {/* ─── 004 · The audit (quiz) ─────────────────────── */}
+      {/* ─── 004 · The estimate (quiz) ──────────────────── */}
       <section id="audit" aria-labelledby="audit-h" className="py-20 md:py-28">
-        <p className="seq mb-4">004 · the audit</p>
+        <p className="seq mb-4">004 · the estimate</p>
         <h2
           id="audit-h"
           className="mb-10 max-w-[24ch] font-display text-4xl font-extrabold md:text-5xl"
         >
-          Three questions. Two minutes. A custom missed-call number sent to your inbox.
+          Three questions. Two minutes. We send back what your missed calls are costing you.
         </h2>
         <Quiz />
       </section>
@@ -277,7 +282,7 @@ export default function Home() {
               One HVAC contractor. Same phone. Same team.
             </h2>
             <p className="mt-6 max-w-[48ch] text-text-muted">
-              Recovered from missed calls plus a one-time reactivation sprint. Both live inside 14
+              Recovered from missed calls plus a one-time text-back to their old list. Both live inside 14
               days. Here's the receipt.
             </p>
           </div>
@@ -289,15 +294,10 @@ export default function Home() {
             <p className="mt-2 font-display text-[68px] font-extrabold leading-none text-brand-blue-ink md:text-[96px]">
               $14,000
             </p>
-            <blockquote className="mt-6 border-t border-brand-green-line pt-6 text-text-body">
-              <p className="text-lg">
-                "The reactivation text went out on a Wednesday. Booked $3,200 in service calls by
-                Friday. That paid for the whole install before their receptionist was even live."
-              </p>
-              <footer className="mt-3 font-mono text-[11px] uppercase tracking-wider text-slate-500">
-                hvac operator · aurora
-              </footer>
-            </blockquote>
+            <p className="mt-6 border-t border-brand-green-line pt-6 text-text-body">
+              Missed calls captured in month one, plus one text-back campaign to a 1,400-name list.
+              If month one doesn't clear what you paid us, month two is on the house.
+            </p>
           </figure>
         </div>
       </section>
@@ -315,13 +315,26 @@ export default function Home() {
           If month one doesn't pay for what you paid us,{" "}
           <span className="hero-highlight text-brand-blue-ink">month two is on the house.</span>
         </h2>
-        <p className="mt-8 max-w-[56ch] text-lg text-text-muted">
-          No asterisks. We measure the missed calls we captured and the bookings the reactivation
-          sprint generated. If the recovered revenue doesn't clear what you paid us inside 30 days,
-          the next month is free. You keep the transcripts either way.
-        </p>
+        <ul className="mt-8 grid max-w-[62ch] gap-3">
+          <li className="grid grid-cols-[130px_1fr] gap-4 border-t border-brand-green-line pt-3">
+            <span className="font-mono text-[11px] uppercase tracking-wider text-brand-green-ink">
+              measured
+            </span>
+            <span className="text-text-body">
+              missed calls we captured + bookings from the old-list text-back.
+            </span>
+          </li>
+          <li className="grid grid-cols-[130px_1fr] gap-4 border-t border-brand-green-line pt-3">
+            <span className="font-mono text-[11px] uppercase tracking-wider text-brand-green-ink">
+              if it doesn't clear
+            </span>
+            <span className="text-text-body">
+              next month is free. Transcripts stay yours.
+            </span>
+          </li>
+        </ul>
         <a href="#audit" className="btn-hero-cta mt-10">
-          Book my free missed-call audit →
+          Get my missed-call estimate →
         </a>
       </section>
 
