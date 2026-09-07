@@ -1,0 +1,14 @@
+[build]
+  command = "next build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "20"
+  NEXT_TELEMETRY_DISABLED = "1"
+
+# @netlify/plugin-nextjs is auto-installed by Netlify when it detects Next.js.
+# Do NOT set `output: 'export'` in next.config — API routes require SSR/functions.
+
+[functions]
+  # Netlify Free: 10s timeout. Paid: 26s. Meta CAPI + CRM must complete within budget.
+  node_bundler = "esbuild"
