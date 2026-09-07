@@ -44,6 +44,64 @@ h1, h2, h3, h4 {
   letter-spacing: 0.02em;
 }
 
+/* --- Hybrid: three loud moments on the calm base --- */
+
+/* Neobrutalist card primitive — used by the Live Intake widget */
+.brut-lg {
+  border: 3px solid #0f172a;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 10px 10px 0 0 #0f172a;
+}
+
+/* Highlighter swipe behind key phrase — used in hero + guarantee */
+.hero-highlight {
+  background-image: linear-gradient(180deg, transparent 62%, #FDE68A 62%, #FDE68A 94%, transparent 94%);
+  padding: 0 0.15em;
+}
+
+/* Neobrutalist gold CTA — reserved for hero + guarantee only */
+.btn-hero-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #0f172a;
+  border-radius: 12px;
+  background: #F59E0B;
+  color: #0f172a;
+  padding: 0.9rem 1.6rem;
+  font-weight: 800;
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+  box-shadow: 6px 6px 0 0 #0f172a;
+  transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
+}
+.btn-hero-cta:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 4px 4px 0 0 #0f172a;
+  background: #FBBF24;
+}
+.btn-hero-cta:active { transform: translate(6px, 6px); box-shadow: 0 0 0 0 #0f172a; }
+.btn-hero-cta:focus-visible { outline: 3px solid #2563EB; outline-offset: 3px; }
+
+/* Header phone pill — .seq sticker treatment */
+.phone-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1.5px solid #0f172a;
+  border-radius: 9999px;
+  background: #ffffff;
+  padding: 0.35rem 0.85rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #0f172a;
+  box-shadow: 2px 2px 0 0 #0f172a;
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+.phone-pill:hover { transform: translate(1px, 1px); box-shadow: 1px 1px 0 0 #0f172a; }
+
 /* Ledger tape print animation */
 @keyframes tape-in {
   from { opacity: 0; transform: translateY(-6px); }

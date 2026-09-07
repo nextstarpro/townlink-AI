@@ -78,11 +78,8 @@ export default function Home() {
           <span className="font-mono text-sm text-brand-green">/global</span>
         </a>
         <div className="flex items-center gap-3 md:gap-5">
-          <a
-            href="tel:+13312345580"
-            className="hidden items-baseline gap-2 font-mono text-[13px] text-brand-blue-ink hover:text-brand-blue sm:flex"
-          >
-            <span className="text-[11px] uppercase tracking-wider text-brand-green-ink">call ›</span>
+          <a href="tel:+13312345580" className="phone-pill hidden sm:inline-flex">
+            <span className="h-1.5 w-1.5 rounded-full bg-brand-green" aria-hidden />
             (331) 234-5580
           </a>
           <a
@@ -105,7 +102,7 @@ export default function Home() {
             id="hero"
             className="font-display text-[44px] font-extrabold text-brand-blue-ink md:text-[68px]"
           >
-            Stop losing calls to the shop that answered first.
+            Stop losing calls to the shop that <span className="hero-highlight">answered first.</span>
           </h1>
           <p className="mt-5 max-w-[54ch] font-mono text-[12px] uppercase tracking-wider text-brand-green-ink">
             done-for-you · we build it, wire it into your existing phone + calendar, and run it
@@ -117,11 +114,8 @@ export default function Home() {
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-6">
-            <a
-              href="#audit"
-              className="bg-cta px-7 py-4 font-semibold text-cta-fg shadow-cta transition hover:bg-cta-hover hover:shadow-cta-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cta-ring"
-            >
-              Book my free missed-call audit
+            <a href="#audit" className="btn-hero-cta">
+              Book my free missed-call audit →
             </a>
           </div>
 
@@ -319,20 +313,15 @@ export default function Home() {
           className="max-w-[22ch] font-display text-4xl font-extrabold text-brand-blue-ink md:text-6xl"
         >
           If month one doesn't pay for what you paid us,{" "}
-          <span className="text-brand-green-ink underline decoration-brand-green decoration-4 underline-offset-4">
-            month two is on the house.
-          </span>
+          <span className="hero-highlight text-brand-blue-ink">month two is on the house.</span>
         </h2>
         <p className="mt-8 max-w-[56ch] text-lg text-text-muted">
           No asterisks. We measure the missed calls we captured and the bookings the reactivation
           sprint generated. If the recovered revenue doesn't clear what you paid us inside 30 days,
           the next month is free. You keep the transcripts either way.
         </p>
-        <a
-          href="#audit"
-          className="mt-10 inline-block bg-cta px-7 py-4 font-semibold text-cta-fg shadow-cta hover:bg-cta-hover"
-        >
-          Book my free missed-call audit
+        <a href="#audit" className="btn-hero-cta mt-10">
+          Book my free missed-call audit →
         </a>
       </section>
 
