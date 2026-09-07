@@ -68,11 +68,17 @@ const FAQ = [
   },
 ];
 
+const CTA_BTN =
+  "inline-flex items-center justify-center rounded-lg border-t border-white/30 bg-cta px-7 py-4 font-semibold text-cta-fg shadow-sm transition duration-150 hover:bg-cta-hover hover:scale-[1.02] hover:shadow-md active:scale-[0.99] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cta-ring";
+
+const CTA_BTN_SM =
+  "inline-flex items-center justify-center rounded-lg border-t border-white/30 bg-cta px-5 py-2.5 text-sm font-semibold text-cta-fg shadow-sm transition duration-150 hover:bg-cta-hover hover:scale-[1.02] hover:shadow-md";
+
 export default function Home() {
   return (
     <main className="mx-auto max-w-[1180px] px-5 md:px-10">
       {/* ─── Header ─────────────────────────────────────── */}
-      <header className="flex flex-wrap items-center justify-between gap-4 border-b border-brand-green-line py-5">
+      <header className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-200 py-5">
         <a href="#" className="flex items-baseline gap-1.5 font-display font-extrabold">
           <span className="text-xl text-brand-blue">townlink</span>
           <span className="font-mono text-sm text-brand-green">/global</span>
@@ -80,15 +86,12 @@ export default function Home() {
         <div className="flex items-center gap-3 md:gap-5">
           <a
             href="tel:+13312345580"
-            className="hidden items-baseline gap-2 font-mono text-[13px] text-brand-blue-ink hover:text-brand-blue sm:flex"
+            className="hidden items-baseline gap-2 rounded-full border border-slate-200 bg-white px-3.5 py-1.5 font-mono text-[13px] text-brand-blue-ink shadow-sm transition hover:border-slate-300 hover:shadow-md sm:flex"
           >
-            <span className="text-[11px] uppercase tracking-wider text-brand-green-ink">call ›</span>
+            <span className="text-[11px] uppercase tracking-wider text-slate-500">call ›</span>
             (331) 234-5580
           </a>
-          <a
-            href="#audit"
-            className="bg-cta px-5 py-2.5 text-sm font-semibold text-cta-fg shadow-cta transition hover:bg-cta-hover"
-          >
+          <a href="#audit" className={CTA_BTN_SM}>
             Book my free missed-call audit
           </a>
         </div>
@@ -97,17 +100,17 @@ export default function Home() {
       {/* ─── 001 · Hero ─────────────────────────────────── */}
       <section
         aria-labelledby="hero"
-        className="grid gap-10 border-b border-brand-green-line pb-16 pt-16 md:grid-cols-[1fr_420px] md:gap-14 md:pb-24 md:pt-24"
+        className="grid gap-10 py-16 md:grid-cols-[1fr_420px] md:gap-14 md:py-24"
       >
         <div>
-          <p className="seq mb-4">001 · addison + dupage county · done-for-you · 14-day install</p>
+          <p className="seq mb-5">001 · addison + dupage county · done-for-you · 14-day install</p>
           <h1
             id="hero"
             className="font-display text-[44px] font-extrabold text-brand-blue-ink md:text-[68px]"
           >
             Stop losing calls to the shop that answered first.
           </h1>
-          <p className="mt-5 max-w-[54ch] font-mono text-[12px] uppercase tracking-wider text-brand-green-ink">
+          <p className="mt-5 max-w-[54ch] font-mono text-[12px] uppercase tracking-wider text-slate-500">
             done-for-you · we build it, wire it into your existing phone + calendar, and run it
           </p>
           <p className="mt-6 max-w-[54ch] text-lg text-text-muted md:text-xl">
@@ -117,20 +120,20 @@ export default function Home() {
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-6">
-            <a
-              href="#audit"
-              className="bg-cta px-7 py-4 font-semibold text-cta-fg shadow-cta transition hover:bg-cta-hover hover:shadow-cta-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cta-ring"
-            >
+            <a href="#audit" className={CTA_BTN}>
               Book my free missed-call audit
             </a>
           </div>
 
-          <p className="mt-5 max-w-[54ch] font-mono text-[12px] uppercase tracking-wider text-brand-green-ink">
+          <p className="mt-6 max-w-[54ch] font-mono text-[12px] uppercase tracking-wider text-slate-500">
             live in 14 days · month two is on the house if month one doesn't clear
           </p>
           <p className="mt-4 max-w-[54ch] text-[15px] text-text-muted">
             Built by a small team out of Addison. We answer our own phone at{" "}
-            <a href="tel:+13312345580" className="font-medium text-brand-blue-ink underline underline-offset-4 decoration-brand-green">
+            <a
+              href="tel:+13312345580"
+              className="font-medium text-brand-blue-ink underline underline-offset-4 decoration-brand-green"
+            >
               (331) 234-5580
             </a>{" "}
             — that number rings a person, not the AI.
@@ -139,50 +142,50 @@ export default function Home() {
 
         <aside aria-label="Live intake sample">
           <LedgerTape />
-          <p className="mt-3 font-mono text-[11px] uppercase tracking-wider text-slate-500">
+          <p className="mt-3 text-center font-mono text-[11px] uppercase tracking-wider text-slate-500">
             sample intake · anonymized · naperville dental office
           </p>
         </aside>
       </section>
 
       {/* ─── 002 · The bleed ────────────────────────────── */}
-      <section aria-labelledby="bleed" className="border-b border-brand-green-line py-20 md:py-28">
-        <p className="seq mb-4">002 · what's leaking</p>
+      <section aria-labelledby="bleed" className="py-16 md:py-24">
+        <p className="seq mb-5">002 · what's leaking</p>
         <h2 id="bleed" className="max-w-[20ch] font-display text-4xl font-extrabold md:text-5xl">
           Four quiet holes in a service business, before lunch.
         </h2>
 
-        <ol className="mt-12 border-t border-brand-green-line">
+        <ul className="mt-12 grid gap-5 md:grid-cols-2">
           {BLEED.map((row, i) => (
             <li
               key={row.line}
-              className="line-item grid grid-cols-1 gap-4 py-8 md:grid-cols-[80px_1fr_180px] md:items-baseline md:gap-10"
+              className="group rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-lg md:p-8"
             >
-              <span className="font-mono text-[11px] uppercase tracking-wider text-brand-green-ink">
-                {String(i + 1).padStart(3, "0")}
-              </span>
-              <div>
-                <p className="font-display text-2xl font-bold text-brand-blue-ink md:text-3xl">
-                  {row.line}
-                </p>
-                <p className="mt-2 max-w-[62ch] text-text-muted">{row.detail}</p>
+              <div className="flex items-baseline justify-between gap-6">
+                <span className="font-mono text-[11px] uppercase tracking-wider text-slate-500">
+                  {String(i + 1).padStart(3, "0")}
+                </span>
+                <span className="font-display text-3xl font-bold tabular-nums text-brand-green md:text-4xl">
+                  {row.stat}
+                </span>
               </div>
-              <span className="font-mono text-4xl font-bold tabular-nums text-brand-green md:text-right md:text-5xl">
-                {row.stat}
-              </span>
+              <p className="mt-4 font-display text-xl font-bold text-brand-blue-ink md:text-2xl">
+                {row.line}
+              </p>
+              <p className="mt-3 text-text-muted">{row.detail}</p>
             </li>
           ))}
-        </ol>
+        </ul>
       </section>
 
       {/* ─── QW · Quick-Win: Database Reactivation Sprint ─ */}
       <section
         aria-labelledby="qw"
-        className="border-b-2 border-brand-blue-ink bg-brand-green-soft py-20 md:py-28"
+        className="rounded-2xl border border-slate-200 bg-slate-50 px-6 py-16 md:px-12 md:py-24"
       >
         <div className="grid gap-12 md:grid-cols-[1fr_1fr] md:items-start md:gap-16">
           <div>
-            <p className="seq mb-4">qw · week one cashflow</p>
+            <p className="seq mb-5">qw · week one cashflow</p>
             <h2
               id="qw"
               className="max-w-[18ch] font-display text-4xl font-extrabold text-brand-blue-ink md:text-5xl"
@@ -195,19 +198,19 @@ export default function Home() {
               voice. Sent at a real hour, on a real day. Bookings land on your calendar while
               we're still installing the receptionist.
             </p>
-            <p className="mt-6 max-w-[54ch] font-mono text-[12px] uppercase tracking-wider text-brand-green-ink">
+            <p className="mt-6 inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 font-mono text-[11px] uppercase tracking-wider text-brand-green-ink shadow-sm">
               first-week roi · before the main system is live
             </p>
           </div>
 
-          <div className="border border-brand-green-line bg-white">
-            <div className="flex items-center justify-between border-b border-brand-green-line px-5 py-2.5 font-mono text-[11px] uppercase tracking-wider text-brand-green-ink">
+          <div className="rounded-xl border border-slate-200 bg-white shadow-sm">
+            <div className="flex items-center justify-between border-b border-slate-200 px-6 py-3 font-mono text-[11px] uppercase tracking-wider text-slate-500">
               <span>reactivation · timeline</span>
-              <span>7 days</span>
+              <span className="rounded-full bg-brand-green-soft px-2.5 py-0.5 text-brand-green-ink">7 days</span>
             </div>
-            <ol className="divide-y divide-brand-green-line">
+            <ol className="divide-y divide-slate-100">
               {REACTIVATION_STEPS.map((s) => (
-                <li key={s.d} className="grid grid-cols-[92px_1fr] gap-4 px-5 py-4">
+                <li key={s.d} className="grid grid-cols-[92px_1fr] gap-4 px-6 py-4">
                   <span className="font-mono text-[12px] uppercase tracking-wider text-brand-green">
                     {s.d}
                   </span>
@@ -220,11 +223,8 @@ export default function Home() {
       </section>
 
       {/* ─── 003 · What gets installed ──────────────────── */}
-      <section
-        aria-labelledby="install"
-        className="border-b border-brand-green-line py-20 md:py-28"
-      >
-        <p className="seq mb-4">003 · what gets installed</p>
+      <section aria-labelledby="install" className="py-16 md:py-24">
+        <p className="seq mb-5">003 · what gets installed</p>
         <h2
           id="install"
           className="max-w-[24ch] font-display text-4xl font-extrabold md:text-5xl"
@@ -232,33 +232,31 @@ export default function Home() {
           One receptionist. One reactivation engine. Zero new software.
         </h2>
 
-        <ol className="mt-12 border-t border-brand-green-line">
+        <ul className="mt-12 grid gap-5 md:grid-cols-3">
           {INSTALLS.map((row, i) => (
             <li
               key={row.name}
-              className="line-item grid grid-cols-[48px_1fr] gap-6 py-8 md:grid-cols-[80px_280px_1fr] md:gap-10"
+              className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-lg md:p-8"
             >
-              <span className="font-mono text-[11px] uppercase tracking-wider text-brand-green-ink">
+              <span className="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-0.5 font-mono text-[11px] uppercase tracking-wider text-slate-500">
                 {String(i + 1).padStart(3, "0")}
               </span>
-              <p className="font-display text-xl font-bold text-brand-blue-ink md:text-2xl">
+              <p className="mt-4 font-display text-xl font-bold text-brand-blue-ink md:text-2xl">
                 {row.name}
               </p>
-              <p className="col-start-2 max-w-[58ch] text-text-muted md:col-start-3">
-                {row.outcome}
-              </p>
+              <p className="mt-3 text-text-muted">{row.outcome}</p>
             </li>
           ))}
-        </ol>
+        </ul>
 
-        <p className="mt-10 max-w-[72ch] font-mono text-[12px] uppercase tracking-wider text-brand-green-ink">
+        <p className="mt-10 inline-flex items-center rounded-full border border-slate-200 bg-white px-3 py-1 font-mono text-[11px] uppercase tracking-wider text-slate-500 shadow-sm">
           zero new software · works with your phone number · google or outlook · airtable or sheets
         </p>
       </section>
 
       {/* ─── 004 · The audit (quiz) ─────────────────────── */}
-      <section id="audit" aria-labelledby="audit-h" className="py-20 md:py-28">
-        <p className="seq mb-4">004 · the audit</p>
+      <section id="audit" aria-labelledby="audit-h" className="py-16 md:py-24">
+        <p className="seq mb-5">004 · the audit</p>
         <h2
           id="audit-h"
           className="mb-10 max-w-[24ch] font-display text-4xl font-extrabold md:text-5xl"
@@ -269,13 +267,10 @@ export default function Home() {
       </section>
 
       {/* ─── 005 · Recovered ────────────────────────────── */}
-      <section
-        aria-labelledby="recovered"
-        className="border-y border-brand-green-line bg-canvas-alt py-20 md:py-28"
-      >
+      <section aria-labelledby="recovered" className="py-16 md:py-24">
         <div className="grid gap-12 md:grid-cols-[1fr_1.1fr] md:items-center">
           <div>
-            <p className="seq mb-4">005 · what thirty days looks like</p>
+            <p className="seq mb-5">005 · what thirty days looks like</p>
             <h2
               id="recovered"
               className="max-w-[16ch] font-display text-4xl font-extrabold md:text-5xl"
@@ -288,14 +283,14 @@ export default function Home() {
             </p>
           </div>
 
-          <figure className="border border-brand-green-line bg-white p-8 md:p-10">
-            <figcaption className="font-mono text-[11px] uppercase tracking-wider text-brand-green-ink">
+          <figure className="rounded-xl border border-slate-200 bg-white p-8 shadow-sm md:p-10">
+            <figcaption className="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-0.5 font-mono text-[11px] uppercase tracking-wider text-slate-500">
               30-day recovered revenue
             </figcaption>
-            <p className="mt-2 font-display text-[68px] font-extrabold leading-none text-brand-blue-ink md:text-[96px]">
+            <p className="mt-4 font-display text-[68px] font-extrabold leading-none text-brand-blue-ink md:text-[96px]">
               $14,000
             </p>
-            <blockquote className="mt-6 border-t border-brand-green-line pt-6 text-text-body">
+            <blockquote className="mt-6 border-t border-slate-200 pt-6 text-text-body">
               <p className="text-lg">
                 "The reactivation text went out on a Wednesday. Booked $3,200 in service calls by
                 Friday. That paid for the whole install before their receptionist was even live."
@@ -309,70 +304,62 @@ export default function Home() {
       </section>
 
       {/* ─── 006 · Guarantee ────────────────────────────── */}
-      <section
-        aria-labelledby="guarantee"
-        className="border-b border-brand-green-line py-24 md:py-32"
-      >
-        <p className="seq mb-4">006 · guarantee</p>
-        <h2
-          id="guarantee"
-          className="max-w-[22ch] font-display text-4xl font-extrabold text-brand-blue-ink md:text-6xl"
-        >
-          If month one doesn't pay for what you paid us,{" "}
-          <span className="text-brand-green-ink underline decoration-brand-green decoration-4 underline-offset-4">
-            month two is on the house.
-          </span>
-        </h2>
-        <p className="mt-8 max-w-[56ch] text-lg text-text-muted">
-          No asterisks. We measure the missed calls we captured and the bookings the reactivation
-          sprint generated. If the recovered revenue doesn't clear what you paid us inside 30 days,
-          the next month is free. You keep the transcripts either way.
-        </p>
-        <a
-          href="#audit"
-          className="mt-10 inline-block bg-cta px-7 py-4 font-semibold text-cta-fg shadow-cta hover:bg-cta-hover"
-        >
-          Book my free missed-call audit
-        </a>
+      <section aria-labelledby="guarantee" className="py-16 md:py-24">
+        <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm md:p-14">
+          <p className="seq mb-5">006 · guarantee</p>
+          <h2
+            id="guarantee"
+            className="max-w-[22ch] font-display text-4xl font-extrabold text-brand-blue-ink md:text-6xl"
+          >
+            If month one doesn't pay for what you paid us,{" "}
+            <span className="text-brand-green-ink underline decoration-brand-green decoration-4 underline-offset-4">
+              month two is on the house.
+            </span>
+          </h2>
+          <p className="mt-8 max-w-[56ch] text-lg text-text-muted">
+            No asterisks. We measure the missed calls we captured and the bookings the reactivation
+            sprint generated. If the recovered revenue doesn't clear what you paid us inside 30 days,
+            the next month is free. You keep the transcripts either way.
+          </p>
+          <a href="#audit" className={`${CTA_BTN} mt-10`}>
+            Book my free missed-call audit
+          </a>
+        </div>
       </section>
 
       {/* ─── 007 · Questions ────────────────────────────── */}
-      <section
-        aria-labelledby="faq"
-        className="border-b border-brand-green-line py-20 md:py-28"
-      >
-        <p className="seq mb-4">007 · questions</p>
+      <section aria-labelledby="faq" className="py-16 md:py-24">
+        <p className="seq mb-5">007 · questions</p>
         <h2 id="faq" className="mb-10 font-display text-4xl font-extrabold md:text-5xl">
           Things owners ask before they say yes.
         </h2>
 
-        <div className="border-t border-brand-green-line">
+        <div className="grid gap-4">
           {FAQ.map((f, i) => (
-            <details key={f.q} className="line-item group py-6 md:py-8" open={i === 0}>
-              <summary className="grid cursor-pointer list-none grid-cols-[48px_1fr_24px] items-baseline gap-6 md:grid-cols-[80px_1fr_24px] md:gap-10">
-                <span className="font-mono text-[11px] uppercase tracking-wider text-brand-green-ink">
-                  {String(i + 1).padStart(3, "0")}
-                </span>
-                <span className="font-display text-xl font-bold text-brand-blue-ink md:text-2xl">
+            <details
+              key={f.q}
+              className="group rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition hover:border-slate-300 md:p-8"
+              open={i === 0}
+            >
+              <summary className="grid cursor-pointer list-none grid-cols-[1fr_28px] items-center gap-6">
+                <span className="font-display text-lg font-bold text-brand-blue-ink md:text-xl">
                   {f.q}
                 </span>
                 <span
                   aria-hidden
-                  className="font-mono text-2xl text-brand-green transition group-open:rotate-45"
+                  className="flex h-7 w-7 items-center justify-center rounded-full border border-slate-200 bg-slate-50 font-mono text-lg leading-none text-brand-green transition group-open:rotate-45"
                 >
                   +
                 </span>
               </summary>
-              <p className="col-start-2 mt-4 max-w-[62ch] pl-[48px] text-text-muted md:pl-[80px]">
-                {f.a}
-              </p>
+              <p className="mt-4 max-w-[70ch] text-text-muted">{f.a}</p>
             </details>
           ))}
         </div>
       </section>
 
       {/* ─── Footer ─────────────────────────────────────── */}
-      <footer className="grid gap-4 py-10 font-mono text-[11px] uppercase tracking-wider text-slate-500 md:grid-cols-3">
+      <footer className="mt-8 grid gap-4 border-t border-slate-200 py-10 font-mono text-[11px] uppercase tracking-wider text-slate-500 md:grid-cols-3">
         <span>© {new Date().getFullYear()} townlink global · 809 n central ave, addison il 60101</span>
         <span className="md:text-center">
           serving elmhurst · naperville · oak brook · hinsdale · downers grove · addison
@@ -380,7 +367,9 @@ export default function Home() {
         <span className="md:text-right">
           <a href="tel:+13312345580" className="hover:text-brand-blue-ink">(331) 234-5580</a>
           {" · "}
-          <a href="mailto:info@townlinkglobal.com" className="hover:text-brand-blue-ink">info@townlinkglobal.com</a>
+          <a href="mailto:info@townlinkglobal.com" className="hover:text-brand-blue-ink">
+            info@townlinkglobal.com
+          </a>
         </span>
       </footer>
     </main>

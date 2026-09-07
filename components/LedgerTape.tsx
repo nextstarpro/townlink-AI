@@ -29,14 +29,21 @@ export default function LedgerTape() {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduce) return;
     let i = 0;
-    const id = window.setInterval(() => {
-      setLines((prev) => {
-        const next = NEXT_LINES[i % NEXT_LINES.length];
-        i += 1;
-        return [...prev.slice(-9), next];
-      });
-    }, 2400);
-    return () => window.clearInterval(id);
+    const start = window.setTimeout(() => {
+      const id = window.setInterval(() => {
+        setLines((prev) => {
+          const next = NEXT_LINES[i % NEXT_LINES.length];
+          i += 1;
+          return [...prev.slice(-9), next];
+        });
+      }, 3500);
+      (window as unknown as { __ledgerInterval?: number }).__ledgerInterval = id;
+    }, 1500);
+    return () => {
+      window.clearTimeout(start);
+      const id = (window as unknown as { __ledgerInterval?: number }).__ledgerInterval;
+      if (id) window.clearInterval(id);
+    };
   }, []);
 
   const total = lines
@@ -44,18 +51,23 @@ export default function LedgerTape() {
     .reduce((sum, l) => sum + Number(l.amount!.replace(/,/g, "")), 0);
 
   return (
-    <div className="border border-brand-green-line bg-white font-mono text-[13px] leading-relaxed text-text-body">
-      {/* Header strip — like a receipt printer header */}
-      <div className="flex items-center justify-between border-b border-brand-green-line bg-brand-green-soft px-4 py-2 text-brand-green-ink">
-        <span>townlink global · live intake · dupage county</span>
-        <span aria-hidden className="flex items-center gap-1.5">
+    <div className="overflow-hidden rounded-xl border border-slate-200 bg-white font-mono text-[13px] leading-relaxed text-text-body shadow-sm transition hover:shadow-lg">
+      {/* Header strip */}
+      <div className="flex items-center justify-between border-b border-slate-200 bg-slate-50 px-5 py-3 text-slate-500">
+        <span className="text-[11px] uppercase tracking-wider">
+          townlink global · live intake · dupage county
+        </span>
+        <span
+          aria-hidden
+          className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white px-2.5 py-0.5 text-[10px] uppercase tracking-wider text-brand-green-ink shadow-sm"
+        >
           <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-brand-green" />
-          rec
+          live
         </span>
       </div>
 
       {/* Column headers */}
-      <div className="grid grid-cols-[52px_1fr_88px] gap-3 border-b border-brand-green-line px-4 py-1.5 text-[11px] uppercase tracking-wider text-brand-green-ink">
+      <div className="grid grid-cols-[52px_1fr_88px] gap-3 border-b border-slate-100 px-5 py-2 text-[10px] uppercase tracking-wider text-slate-400">
         <span>time</span>
         <span>event</span>
         <span className="text-right">usd</span>
@@ -63,34 +75,41 @@ export default function LedgerTape() {
 
       {/* Tape */}
       <ol
-        className="max-h-[360px] overflow-hidden px-4"
+        className="max-h-[360px] overflow-hidden px-5"
         aria-live="polite"
         aria-label="Live intake log"
       >
         {lines.map((l, idx) => (
           <li
             key={`${l.t}-${idx}`}
-            className="tape-line grid grid-cols-[52px_1fr_88px] gap-3 border-b border-dashed border-slate-100 py-1.5"
+            className="tape-line grid grid-cols-[52px_1fr_88px] gap-3 border-b border-slate-100 py-2 last:border-0"
           >
             <span className="text-slate-500">{l.t}</span>
-            <span>
-              {l.kind === "call" && <span className="mr-1 text-slate-400">–</span>}
-              {l.kind === "book" && <span className="mr-1 text-brand-green">+</span>}
-              {l.label}
+            <span className="flex items-center gap-2">
+              {l.kind === "call" && (
+                <span className="inline-flex h-4 items-center rounded-full bg-slate-100 px-1.5 text-[9px] font-medium uppercase tracking-wider text-slate-500">
+                  call
+                </span>
+              )}
+              {l.kind === "book" && (
+                <span className="inline-flex h-4 items-center rounded-full bg-brand-green-soft px-1.5 text-[9px] font-medium uppercase tracking-wider text-brand-green-ink">
+                  book
+                </span>
+              )}
+              <span>{l.label}</span>
             </span>
-            <span className="text-right tabular-nums">
-              {l.amount ? `$ ${l.amount}` : "—"}
+            <span className="text-right tabular-nums text-slate-700">
+              {l.amount ? `$${l.amount}` : "—"}
             </span>
           </li>
         ))}
       </ol>
 
-      {/* Total row — the big number */}
-      <div className="grid grid-cols-[52px_1fr_auto] items-baseline gap-3 border-t-2 border-brand-green bg-brand-green-soft px-4 py-3">
-        <span className="font-mono text-[11px] uppercase tracking-wider text-brand-green-ink">
-          total
+      {/* Total row */}
+      <div className="grid grid-cols-[1fr_auto] items-baseline gap-3 border-t border-slate-200 bg-slate-50 px-5 py-4">
+        <span className="text-[11px] uppercase tracking-wider text-slate-500">
+          recovered · past hour
         </span>
-        <span className="text-[11px] text-brand-green-ink">recovered · past hour</span>
         <span className="font-display text-3xl font-extrabold tabular-nums text-brand-blue-ink">
           ${total.toLocaleString("en-US", { minimumFractionDigits: 2 })}
         </span>
