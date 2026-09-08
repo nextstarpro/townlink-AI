@@ -137,19 +137,78 @@ export default function PrivacyPage() {
         <section>
           <h2 className="font-display text-xl font-bold text-brand-blue-ink">6. Your rights</h2>
           <p>
-            Depending on where you live, you may have rights to access, correct, delete,
-            or restrict how we process your information — including under the California
-            Privacy Rights Act (CPRA), the Colorado Privacy Act, the Connecticut Data
-            Privacy Act, the Utah Consumer Privacy Act, and the Virginia Consumer Data
-            Protection Act. To exercise any of these, email{" "}
+            Depending on where you live, you have rights over the personal information
+            we hold about you — including under the California Privacy Rights Act (CPRA),
+            the Colorado Privacy Act, the Connecticut Data Privacy Act, the Utah Consumer
+            Privacy Act, and the Virginia Consumer Data Protection Act.
+          </p>
+          <ul className="list-disc space-y-2 pl-6">
+            <li>
+              <strong>Right to know / access.</strong> Request the categories and specific
+              pieces of personal information we have collected about you.
+            </li>
+            <li>
+              <strong>Right to correct.</strong> Ask us to fix inaccurate personal
+              information.
+            </li>
+            <li>
+              <strong>Right to delete.</strong> Ask us to delete personal information we
+              collected from you, subject to legal-retention exceptions (for example,
+              consent records we are required to retain for TCPA compliance).
+            </li>
+            <li>
+              <strong>Right to opt out of sharing</strong> for cross-context behavioral
+              advertising —{" "}
+              <Link href="/do-not-sell" className="underline">
+                exercise this right here
+              </Link>
+              , or by sending a Global Privacy Control signal from your browser.
+            </li>
+            <li>
+              <strong>Right to limit use of sensitive personal information</strong>{" "}
+              (California). We do not use sensitive personal information for purposes
+              outside those permitted under CPRA § 7027(m).
+            </li>
+            <li>
+              <strong>Right to non-discrimination</strong> for exercising a privacy right.
+            </li>
+          </ul>
+          <p>
+            <strong>How to exercise.</strong> Email{" "}
             <a href="mailto:privacy@townlinkglobal.com" className="underline">
               privacy@townlinkglobal.com
             </a>{" "}
-            from the address on file, or write to the mailing address above.
+            from the address on file, or write to the mailing address above. California
+            residents may designate an authorized agent — see{" "}
+            <Link href="/do-not-sell" className="underline">
+              our Do Not Sell or Share page
+            </Link>{" "}
+            for verification requirements.
           </p>
           <p>
-            California residents may also designate an authorized agent. We do not
-            knowingly discriminate against anyone for exercising a privacy right.
+            <strong>Verification.</strong> To protect your information, we verify requests
+            by matching the requesting email or postal address to the record on file and,
+            for higher-risk requests (deletion, sensitive-information limits), by
+            confirming two additional data points such as the phone number and business
+            name you originally submitted.
+          </p>
+          <p>
+            <strong>Response timeframes.</strong> We respond to access, correction, and
+            deletion requests within 45 days, extendable once by an additional 45 days if
+            reasonably necessary (with notice to you). Opt-out requests are honored within
+            15 business days.
+          </p>
+          <p>
+            <strong>Appeals.</strong> If we deny your request in whole or in part,
+            residents of Colorado, Connecticut, Virginia, and other states with a
+            statutory appeal right may appeal by replying to our response email or writing
+            to{" "}
+            <a href="mailto:privacy@townlinkglobal.com" className="underline">
+              privacy@townlinkglobal.com
+            </a>{" "}
+            with the subject line &quot;Appeal.&quot; We will respond to the appeal within
+            60 days and, if we again deny, will provide you with the contact information
+            for your state Attorney General&apos;s office.
           </p>
         </section>
 
@@ -158,11 +217,64 @@ export default function PrivacyPage() {
             7. Cookies and tracking
           </h2>
           <p>
-            We use only strictly necessary cookies by default. The Meta Pixel is
+            We use only strictly necessary storage by default. The Meta Pixel is
             consent-gated: it does not load, and no Meta identifiers are placed, until
-            you affirmatively accept our cookie banner. You can change your choice at
-            any time by clearing your browser storage for this site — the banner will
-            reappear on your next visit.
+            you affirmatively accept our cookie banner or is suppressed by a Global
+            Privacy Control signal from your browser, whichever applies.
+          </p>
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse text-sm">
+              <thead>
+                <tr className="border-b-2 border-brand-blue-ink text-left">
+                  <th className="py-2 pr-4 font-mono text-[11px] uppercase tracking-wider text-brand-green-ink">
+                    Name
+                  </th>
+                  <th className="py-2 pr-4 font-mono text-[11px] uppercase tracking-wider text-brand-green-ink">
+                    Purpose
+                  </th>
+                  <th className="py-2 pr-4 font-mono text-[11px] uppercase tracking-wider text-brand-green-ink">
+                    Duration
+                  </th>
+                  <th className="py-2 font-mono text-[11px] uppercase tracking-wider text-brand-green-ink">
+                    Party
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-brand-green-line">
+                  <td className="py-2 pr-4 font-mono">
+                    <code>tlg_consent_v1</code>
+                  </td>
+                  <td className="py-2 pr-4">Stores your cookie-banner choice</td>
+                  <td className="py-2 pr-4">Until cleared</td>
+                  <td className="py-2">First-party (localStorage)</td>
+                </tr>
+                <tr className="border-b border-brand-green-line">
+                  <td className="py-2 pr-4 font-mono">
+                    <code>_fbp</code>
+                  </td>
+                  <td className="py-2 pr-4">Meta advertising measurement</td>
+                  <td className="py-2 pr-4">90 days</td>
+                  <td className="py-2">Third-party (Meta Platforms)</td>
+                </tr>
+                <tr className="border-b border-brand-green-line">
+                  <td className="py-2 pr-4 font-mono">
+                    <code>_fbc</code>
+                  </td>
+                  <td className="py-2 pr-4">Meta click-attribution</td>
+                  <td className="py-2 pr-4">90 days</td>
+                  <td className="py-2">Third-party (Meta Platforms)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>
+            You can withdraw consent at any time by clearing your browser storage for
+            this site (the banner will reappear on your next visit) or by using our{" "}
+            <Link href="/do-not-sell" className="underline">
+              Do Not Sell or Share My Personal Information
+            </Link>{" "}
+            page.
           </p>
         </section>
 

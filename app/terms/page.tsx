@@ -90,14 +90,14 @@ export default function TermsPage() {
 
         <section>
           <h2 className="font-display text-xl font-bold text-brand-blue-ink">
-            6. Client-provided contact lists
+            6. If you become a client
           </h2>
           <p>
-            If you become a client and give us a contact list for outbound calling or
-            texting, you represent and warrant that every contact on the list has given
-            you prior express written consent under 47 U.S.C. § 227 and applicable state
-            law to receive automated marketing communications, and that you can produce
-            those records on request. Full terms live in the MSA.
+            These Terms govern your use of this marketing site. If you engage us for
+            services, a separate Master Services Agreement (MSA) governs the engagement,
+            including data uploads, consent-attestation requirements for any contact
+            lists you provide, service-level commitments, and billing. Where the MSA and
+            these Terms conflict on any client-facing matter, the MSA controls.
           </p>
         </section>
 
@@ -122,9 +122,17 @@ export default function TermsPage() {
             arising out of or related to this site or any services rendered is capped at
             the fees you paid us in the 12 months preceding the claim, or USD $100 if you
             have paid us nothing. We are not liable for indirect, incidental, special,
-            consequential, or exemplary damages, or for lost profits or lost data. These
-            limits do not apply to claims that cannot be limited by law (for example,
-            gross negligence or willful misconduct).
+            consequential, or exemplary damages, or for lost profits or lost data.
+          </p>
+          <p>
+            <strong>Carve-outs.</strong> These limits do not apply to: (a) gross
+            negligence, willful or wanton misconduct, or fraud; (b) claims that cannot be
+            limited by law; (c) statutory damages under the federal Telephone Consumer
+            Protection Act (47 U.S.C. § 227), the Illinois Biometric Information Privacy
+            Act (740 ILCS 14), or any comparable state statute that expressly forbids
+            contractual limitation; (d) either party&apos;s indemnification obligations
+            under a signed Master Services Agreement; or (e) either party&apos;s breach of
+            confidentiality obligations.
           </p>
         </section>
 
@@ -184,11 +192,51 @@ export default function TermsPage() {
             11. Changes; severability; entire agreement
           </h2>
           <p>
-            We may update these Terms; the &quot;last updated&quot; date at the top
-            reflects the latest version. If any provision is held unenforceable, the rest
-            remains in force. These Terms, together with our Privacy Policy and (if you
-            become a client) the MSA, are the entire agreement between you and us on this
-            subject.
+            <strong>Non-material updates.</strong> We may update these Terms; the
+            &quot;last updated&quot; date at the top reflects the latest version.
+          </p>
+          <p>
+            <strong>Material updates to §8 (Limitation of liability) or §9 (Dispute
+            resolution).</strong> For any material change to §8 or §9, we will provide at
+            least 30 days&apos; notice to any lead who has submitted our form, via email
+            to the address on file and via a persistent banner on this site. Continued
+            use of the site or continued engagement with us after the notice period
+            constitutes acceptance. If you do not accept, your sole remedy is to email{" "}
+            <a href="mailto:privacy@townlinkglobal.com" className="underline">
+              privacy@townlinkglobal.com
+            </a>{" "}
+            and request deletion of your record; in that case, the version of §8 and §9
+            in effect on the date you last submitted our form governs any claim that had
+            accrued as of the amendment date.
+          </p>
+          <p>
+            <strong>Which version binds you.</strong> The version of these Terms in
+            effect on the date you last submitted our form governs any dispute between
+            you and us, unless you have affirmatively accepted a later version.
+          </p>
+          <p>
+            <strong>Severability.</strong> If any provision is held unenforceable, the
+            rest remains in force, except as expressly stated in §9 (class-action waiver
+            is non-severable from the arbitration provision).
+          </p>
+          <p>
+            <strong>Survival.</strong> Sections 3 (Illustrative figures), 7 (Intellectual
+            property), 8 (Limitation of liability), 9 (Dispute resolution), 10 (Governing
+            law), and this §11 survive termination of your engagement with us and
+            expiration or termination of these Terms.
+          </p>
+          <p>
+            <strong>Electronic transactions (E-SIGN).</strong> By checking the consent
+            box on our form, you agree that (a) you are willing to conduct this
+            transaction electronically, (b) you have the hardware and software to access
+            and retain these Terms, and (c) the electronic record of your acceptance has
+            the same legal effect as a signed writing under the federal E-SIGN Act (15
+            U.S.C. § 7001) and applicable state law.
+          </p>
+          <p>
+            <strong>Entire agreement.</strong> These Terms, together with our Privacy
+            Policy and (if you become a client) the MSA, are the entire agreement between
+            you and us on this subject.
           </p>
         </section>
 

@@ -53,7 +53,7 @@ export async function POST(req: NextRequest) {
     gpc
       ? Promise.resolve({ skipped: "GPC opt-out signal received" })
       : postToMetaCAPI({ email, phone, name, eventId, eventTime, clientIp, userAgent, fbp, fbc, sourceUrl }),
-    postToCRM({ name, email, phone, businessType, headache, consent, eventId }),
+    postToCRM({ name, email, phone, businessType, headache, consent, eventId, gpcSignal: gpc, clientIp, userAgent }),
   ]);
 
   return NextResponse.json({
@@ -118,7 +118,14 @@ async function postToMetaCAPI(args: {
   return { status: res.status, response: json };
 }
 
-async function postToCRM(lead: LeadPayload & { eventId: string }) {
+async function postToCRM(
+  lead: LeadPayload & {
+    eventId: string;
+    gpcSignal: boolean;
+    clientIp?: string;
+    userAgent?: string;
+  },
+) {
   const webhook = process.env.CRM_WEBHOOK_URL;
   if (!webhook) return { skipped: "CRM_WEBHOOK_URL not configured (Airtable to be added)" };
   const res = await fetch(webhook, {
