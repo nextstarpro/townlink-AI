@@ -14,13 +14,13 @@ const BLEED = [
   },
   {
     line: "a form comes in at 9pm — by 10am they booked the next guy",
-    detail: "Every hour you don't reply, the odds you win the job drop. First shop to call back usually gets it.",
+    detail: "Speed to reply is the single biggest factor in whether an inbound web lead converts.",
     stat: "1st",
   },
   {
     line: "old customer list sitting in a spreadsheet",
     detail: "The names you haven't texted since 2022 — assuming they already opted in to hear from you. Real money. Sitting still. This one we can move in a week.",
-    stat: "~1,400",
+    stat: "varies",
   },
 ];
 
@@ -112,10 +112,10 @@ export default function Home() {
             done-for-you · we build it, wire it into your existing phone + calendar, and run it
           </p>
           <p className="mt-6 max-w-[54ch] text-lg text-text-muted md:text-xl">
-            A 24/7 AI receptionist that picks up on the second ring, books straight to your calendar,
-            and texts your old customer list and books the ones ready to buy again. We wire it into
-            the phone number and calendar you already use. You approve the voice. Your team doesn't
-            touch a thing.
+            A 24/7 AI receptionist that typically picks up in the first few rings, books straight to
+            your calendar, and texts your old customer list to book the ones ready to buy again. We
+            wire it into the phone number and calendar you already use. You approve the voice. Your
+            team keeps working the way they do now.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-6">
@@ -125,7 +125,7 @@ export default function Home() {
           </div>
 
           <p className="mt-5 max-w-[54ch] font-mono text-[12px] uppercase tracking-wider text-brand-green-ink">
-            live in 14 days · month two is on the house if month one doesn't clear
+            typically live in about two weeks · month two is on the house if month one doesn't clear
           </p>
           <p className="mt-4 max-w-[54ch] text-[15px] text-text-muted">
             Built by a small team out of Addison. We answer our own phone at{" "}
@@ -228,7 +228,7 @@ export default function Home() {
           id="install"
           className="max-w-[24ch] font-display text-4xl font-extrabold md:text-5xl"
         >
-          One receptionist. One text-back to your old list. Zero new software.
+          One receptionist. One text-back to your old list. No new software for your team to learn.
         </h2>
 
         <ol className="mt-12 border-t border-brand-green-line">
@@ -277,32 +277,56 @@ export default function Home() {
             <p className="seq mb-4">005 · what thirty days looks like</p>
             <h2
               id="recovered"
-              className="max-w-[16ch] font-display text-4xl font-extrabold md:text-5xl"
+              className="max-w-[18ch] font-display text-4xl font-extrabold md:text-5xl"
             >
-              One HVAC contractor. Same phone. Same team.
+              What thirty days can look like for an HVAC contractor.
             </h2>
             <p className="mt-6 max-w-[48ch] text-text-muted">
-              What thirty days can look like when the phone stops going to voicemail and the old
-              list gets one clean text-back. Both live inside 14 days.
+              Missed calls captured, one text-back to a dormant list, both live in under two weeks.
+              Actual results depend on your call volume, list size, and your existing consent chain.
             </p>
             <p className="mt-4 inline-block border border-brand-green-line bg-brand-green-soft px-2.5 py-1 font-mono text-[10px] uppercase tracking-wider text-brand-green-ink">
-              illustrative example
+              hypothetical · not a verified client result
             </p>
           </div>
 
-          <figure className="border border-brand-green-line bg-white p-8 md:p-10">
-            <figcaption className="flex items-center justify-between font-mono text-[11px] uppercase tracking-wider text-brand-green-ink">
-              <span>30-day recovered revenue</span>
-              <span className="text-slate-500">illustrative</span>
-            </figcaption>
-            <p className="mt-2 font-display text-[68px] font-extrabold leading-none text-brand-blue-ink md:text-[96px]">
-              $14,000
+          <aside className="border border-brand-green-line bg-white p-8 md:p-10">
+            <p className="font-mono text-[11px] uppercase tracking-wider text-brand-green-ink">
+              illustrative · what the first month tends to look like
             </p>
-            <p className="mt-6 border-t border-brand-green-line pt-6 text-text-body">
-              Missed calls captured in month one, plus one text-back campaign to a 1,400-name list.
-              If month one doesn't clear what you paid us, month two is on the house.
+            <ul className="mt-6 grid gap-4 text-text-body">
+              <li className="grid grid-cols-[14px_1fr] gap-3">
+                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-brand-green" />
+                <span>
+                  <strong className="text-brand-blue-ink">Missed calls become bookings.</strong>{" "}
+                  The AI receptionist answers what your team can't, gets the name and job, and
+                  drops it on the calendar.
+                </span>
+              </li>
+              <li className="grid grid-cols-[14px_1fr] gap-3">
+                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-brand-green" />
+                <span>
+                  <strong className="text-brand-blue-ink">One clean text-back to your list.</strong>{" "}
+                  A single opt-in-compliant message to contacts who already gave you permission —
+                  the exact scope depends on your existing consent records.
+                </span>
+              </li>
+              <li className="grid grid-cols-[14px_1fr] gap-3">
+                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-brand-green" />
+                <span>
+                  <strong className="text-brand-blue-ink">If month one doesn't clear, month two is on the house.</strong>{" "}
+                  Service credit only — full terms in{" "}
+                  <a href="/terms" className="underline">
+                    Terms of Service
+                  </a>
+                  .
+                </span>
+              </li>
+            </ul>
+            <p className="mt-6 border-t border-brand-green-line pt-4 font-mono text-[10px] uppercase tracking-wider text-slate-500">
+              example only · not a guarantee of outcome
             </p>
-          </figure>
+          </aside>
         </div>
       </section>
 
