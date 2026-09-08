@@ -51,6 +51,12 @@ export default function PrivacyPage() {
               <code>_fbp</code> and <code>_fbc</code>.
             </li>
             <li>
+              <strong>Consent record.</strong> When you submit our form, we record the
+              checkboxes you ticked, the timestamp, the user agent, and whether your
+              browser sent a Global Privacy Control signal. We retain this record as
+              proof of consent for the duration set out in §5.
+            </li>
+            <li>
               <strong>If you become a client.</strong> Records of calls and text messages
               handled by our service on your behalf, including recordings, transcripts, and
               logs. Governed by our Master Services Agreement.
@@ -81,7 +87,8 @@ export default function PrivacyPage() {
             <li>
               <strong>Meta Platforms</strong> — hashed contact information for advertising
               conversion measurement via the Meta Conversions API, and cookie-based Pixel
-              events, only after your consent.
+              events, only after your consent, and never when a Global Privacy Control
+              signal is present.
             </li>
             <li>
               <strong>Service providers</strong> — hosting (Netlify), CRM (Airtable),
@@ -127,10 +134,6 @@ export default function PrivacyPage() {
             </li>
             <li>Client call recordings: 90 days by default, unless a longer period is agreed.</li>
             <li>Client call transcripts: 12 months, unless a longer period is agreed.</li>
-            <li>
-              Opt-out and deletion requests are honored within 10 business days for the
-              lead-stage records we control directly.
-            </li>
           </ul>
         </section>
 
@@ -167,7 +170,8 @@ export default function PrivacyPage() {
             <li>
               <strong>Right to limit use of sensitive personal information</strong>{" "}
               (California). We do not use sensitive personal information for purposes
-              outside those permitted under CPRA § 7027(m).
+              outside those permitted under California&apos;s CPRA implementing
+              regulations at 11 CCR § 7027.
             </li>
             <li>
               <strong>Right to non-discrimination</strong> for exercising a privacy right.
@@ -219,8 +223,8 @@ export default function PrivacyPage() {
           <p>
             We use only strictly necessary storage by default. The Meta Pixel is
             consent-gated: it does not load, and no Meta identifiers are placed, until
-            you affirmatively accept our cookie banner or is suppressed by a Global
-            Privacy Control signal from your browser, whichever applies.
+            either (a) you affirmatively accept our cookie banner or (b) a Global
+            Privacy Control signal from your browser suppresses it, whichever applies.
           </p>
           <div className="overflow-x-auto">
             <table className="w-full border-collapse text-sm">

@@ -129,10 +129,12 @@ export default function TermsPage() {
             negligence, willful or wanton misconduct, or fraud; (b) claims that cannot be
             limited by law; (c) statutory damages under the federal Telephone Consumer
             Protection Act (47 U.S.C. § 227), the Illinois Biometric Information Privacy
-            Act (740 ILCS 14), or any comparable state statute that expressly forbids
-            contractual limitation; (d) either party&apos;s indemnification obligations
-            under a signed Master Services Agreement; or (e) either party&apos;s breach of
-            confidentiality obligations.
+            Act (740 ILCS 14), or any other statute where contractual limitation is
+            expressly forbidden by that statute&apos;s own text (this carve-out does not
+            extend to statutes under which contractual limitation is merely disfavored
+            or reviewed for unconscionability); (d) either party&apos;s indemnification
+            obligations under a signed Master Services Agreement; or (e) either
+            party&apos;s breach of confidentiality obligations.
           </p>
         </section>
 
@@ -143,9 +145,22 @@ export default function TermsPage() {
           <p>
             Any dispute arising out of or relating to these Terms will be resolved by
             binding arbitration administered by JAMS under its Comprehensive Arbitration
-            Rules, seated in DuPage County, Illinois, before a single arbitrator. The
-            parties agree to attempt mediation in good faith for at least 30 days before
-            initiating arbitration.
+            Rules, seated in DuPage County, Illinois, before a single arbitrator.
+          </p>
+          <p>
+            <strong>Pre-arbitration mediation.</strong> Either party may initiate
+            mediation by written notice to the other. The mediator will be selected by
+            mutual agreement within 15 days or, failing agreement, appointed by JAMS.
+            Mediation costs are shared equally, except that TownLink will advance the
+            consumer claimant&apos;s share subject to the consumer-fee-advance
+            provisions below. If mediation does not resolve the dispute within 30 days
+            of initiation, either party may proceed to arbitration.
+          </p>
+          <p>
+            <strong>California-consumer venue.</strong> For any claimant who is a
+            California resident acting as a consumer, arbitration may, at the
+            claimant&apos;s election, be seated in a JAMS office within 100 miles of the
+            claimant&apos;s residence, with all other terms of this §9 unchanged.
           </p>
           <p>
             <strong>Consumer-fee advance.</strong> For any claimant who is a natural
@@ -165,7 +180,7 @@ export default function TermsPage() {
             will proceed in the state or federal courts seated in DuPage County, Illinois.
           </p>
           <p>
-            <strong>Mass-arbitration procedure.</strong> If 25 or more substantially
+            <strong>Mass-arbitration procedure.</strong> If 50 or more substantially
             similar demands are filed by or on behalf of claimants represented by the same
             counsel or coordinated counsel, the parties will follow the JAMS Mass
             Arbitration Procedures and bellwether protocol then in effect.
