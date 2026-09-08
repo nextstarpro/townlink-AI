@@ -29,8 +29,8 @@ export default function PrivacyPage() {
             This site is operated by <strong>NextStar Procurement LLC</strong>, an Illinois
             limited liability company, doing business as <strong>TownLink Global</strong>. Our
             mailing address is 809 N Central Ave, Addison IL 60101. Contact:{" "}
-            <a href="mailto:privacy@townlinkglobal.com" className="underline">
-              privacy@townlinkglobal.com
+            <a href="mailto:support@townlinkglobal.com" className="underline">
+              support@townlinkglobal.com
             </a>
             .
           </p>
@@ -179,8 +179,8 @@ export default function PrivacyPage() {
           </ul>
           <p>
             <strong>How to exercise.</strong> Email{" "}
-            <a href="mailto:privacy@townlinkglobal.com" className="underline">
-              privacy@townlinkglobal.com
+            <a href="mailto:support@townlinkglobal.com" className="underline">
+              support@townlinkglobal.com
             </a>{" "}
             from the address on file, or write to the mailing address above. California
             residents may designate an authorized agent — see{" "}
@@ -207,8 +207,8 @@ export default function PrivacyPage() {
             residents of Colorado, Connecticut, Virginia, and other states with a
             statutory appeal right may appeal by replying to our response email or writing
             to{" "}
-            <a href="mailto:privacy@townlinkglobal.com" className="underline">
-              privacy@townlinkglobal.com
+            <a href="mailto:support@townlinkglobal.com" className="underline">
+              support@townlinkglobal.com
             </a>{" "}
             with the subject line &quot;Appeal.&quot; We will respond to the appeal within
             60 days and, if we again deny, will provide you with the contact information
@@ -297,8 +297,8 @@ export default function PrivacyPage() {
           <h2 className="font-display text-xl font-bold text-brand-blue-ink">9. Contact</h2>
           <p>
             Questions or complaints:{" "}
-            <a href="mailto:privacy@townlinkglobal.com" className="underline">
-              privacy@townlinkglobal.com
+            <a href="mailto:support@townlinkglobal.com" className="underline">
+              support@townlinkglobal.com
             </a>
             . NextStar Procurement LLC, 809 N Central Ave, Addison IL 60101.
           </p>

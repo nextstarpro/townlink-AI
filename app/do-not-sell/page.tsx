@@ -64,8 +64,8 @@ export default function DoNotSellPage() {
             </li>
             <li>
               <strong>Email us.</strong> Send an opt-out request to{" "}
-              <a href="mailto:privacy@townlinkglobal.com" className="underline">
-                privacy@townlinkglobal.com
+              <a href="mailto:support@townlinkglobal.com" className="underline">
+                support@townlinkglobal.com
               </a>{" "}
               from the address on file, or write to NextStar Procurement LLC,
               809 N Central Ave, Addison IL 60101. We will process your request

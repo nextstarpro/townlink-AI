@@ -217,8 +217,8 @@ export default function TermsPage() {
             to the address on file and via a persistent banner on this site. Continued
             use of the site or continued engagement with us after the notice period
             constitutes acceptance. If you do not accept, your sole remedy is to email{" "}
-            <a href="mailto:privacy@townlinkglobal.com" className="underline">
-              privacy@townlinkglobal.com
+            <a href="mailto:support@townlinkglobal.com" className="underline">
+              support@townlinkglobal.com
             </a>{" "}
             and request deletion of your record; in that case, the version of §8 and §9
             in effect on the date you last submitted our form governs any claim that had
