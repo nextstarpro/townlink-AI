@@ -4,13 +4,13 @@ import Quiz from "@/components/Quiz";
 const BLEED = [
   {
     line: "call answered by voicemail",
-    detail: "62% of calls to a small service business go unanswered. The next name on Google picks up.",
-    stat: "62%",
+    detail: "Roughly 6 in 10 calls to small service businesses go unanswered (Invoca / Marchex industry data). The next name on Google picks up.",
+    stat: "~60%",
   },
   {
     line: "hours on quotes, invoices, follow-ups",
-    detail: "Your team burns 40% of the workday on paperwork nobody wants to do. It's payroll, going out the back door.",
-    stat: "40%",
+    detail: "Small-business teams spend around 40% of the workday on admin (HubSpot / APQC surveys). It's payroll, going out the back door.",
+    stat: "~40%",
   },
   {
     line: "a form comes in at 9pm — by 10am they booked the next guy",
@@ -19,7 +19,7 @@ const BLEED = [
   },
   {
     line: "old customer list sitting in a spreadsheet",
-    detail: "The names you haven't texted since 2022. Real money. Sitting still. This one we can move in a week.",
+    detail: "The names you haven't texted since 2022 — assuming they already opted in to hear from you. Real money. Sitting still. This one we can move in a week.",
     stat: "~1,400",
   },
 ];
@@ -59,8 +59,8 @@ const FAQ = [
     a: "Days 1–3: the text-back to your old list gets drafted and sent. Days 4–10: your receptionist's voice is tuned to your business and integrations are wired in. Days 10–14: dry-run against test calls, then flip live. You approve every step.",
   },
   {
-    q: "Will callers know it's a robot?",
-    a: "We tune the assistant to your voice and your business — how you greet, what you ask, what you never say. Callers hear a receptionist, not a bot.",
+    q: "Will callers know it's an AI?",
+    a: "Yes — every call opens with a short, natural disclosure (\"Hi, this is [Business Name]'s virtual assistant — how can I help?\"), so callers always know who they're talking to. It doesn't sound robotic, it just doesn't hide what it is. Callers can ask for a live person at any point and we hand off cleanly.",
   },
   {
     q: "Do I need to switch software?",
@@ -139,7 +139,7 @@ export default function Home() {
         <aside aria-label="Live intake sample">
           <LedgerTape />
           <p className="mt-3 font-mono text-[11px] uppercase tracking-wider text-slate-500">
-            sample intake · anonymized · addison HVAC company
+            illustrative example · not live client data
           </p>
         </aside>
       </section>
@@ -282,14 +282,18 @@ export default function Home() {
               One HVAC contractor. Same phone. Same team.
             </h2>
             <p className="mt-6 max-w-[48ch] text-text-muted">
-              Recovered from missed calls plus a one-time text-back to their old list. Both live inside 14
-              days. Here's the receipt.
+              What thirty days can look like when the phone stops going to voicemail and the old
+              list gets one clean text-back. Both live inside 14 days.
+            </p>
+            <p className="mt-4 inline-block border border-brand-green-line bg-brand-green-soft px-2.5 py-1 font-mono text-[10px] uppercase tracking-wider text-brand-green-ink">
+              illustrative example
             </p>
           </div>
 
           <figure className="border border-brand-green-line bg-white p-8 md:p-10">
-            <figcaption className="font-mono text-[11px] uppercase tracking-wider text-brand-green-ink">
-              30-day recovered revenue
+            <figcaption className="flex items-center justify-between font-mono text-[11px] uppercase tracking-wider text-brand-green-ink">
+              <span>30-day recovered revenue</span>
+              <span className="text-slate-500">illustrative</span>
             </figcaption>
             <p className="mt-2 font-display text-[68px] font-extrabold leading-none text-brand-blue-ink md:text-[96px]">
               $14,000
@@ -374,8 +378,11 @@ export default function Home() {
       </section>
 
       {/* ─── Footer ─────────────────────────────────────── */}
-      <footer className="grid gap-4 py-10 font-mono text-[11px] uppercase tracking-wider text-slate-500 md:grid-cols-3">
-        <span>© {new Date().getFullYear()} townlink global · 809 n central ave, addison il 60101</span>
+      <footer className="grid gap-4 border-t border-brand-green-line py-10 font-mono text-[11px] uppercase tracking-wider text-slate-500 md:grid-cols-3">
+        <span>
+          © {new Date().getFullYear()} nextstar procurement llc (illinois) · dba townlink global<br />
+          809 n central ave, addison il 60101
+        </span>
         <span className="md:text-center">
           serving elmhurst · naperville · oak brook · hinsdale · downers grove · addison
         </span>
@@ -383,6 +390,11 @@ export default function Home() {
           <a href="tel:+13312345580" className="hover:text-brand-blue-ink">(331) 234-5580</a>
           {" · "}
           <a href="mailto:info@townlinkglobal.com" className="hover:text-brand-blue-ink">info@townlinkglobal.com</a>
+        </span>
+        <span className="normal-case tracking-normal md:col-span-3 md:text-center">
+          Stats cited from public industry sources (Invoca, Marchex, HubSpot, APQC). Example figures on this
+          page are illustrative unless a client is named and quoted. AI voice interactions are disclosed on
+          every call; outbound campaigns run only against contacts the client attests are consented.
         </span>
       </footer>
     </main>
