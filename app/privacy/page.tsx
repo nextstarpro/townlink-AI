@@ -93,13 +93,38 @@ export default function PrivacyPage() {
               rights and those of our clients.
             </li>
           </ul>
-          <p>We do not sell personal information.</p>
+          <p>
+            We do not sell personal information for money. We may{" "}
+            <em>share</em> limited identifiers (hashed email, hashed phone,
+            browser cookies) with Meta Platforms for advertising conversion
+            measurement, which qualifies as &quot;sharing for cross-context
+            behavioral advertising&quot; under the California Privacy Rights
+            Act. You can opt out at any time by clicking{" "}
+            <Link href="/do-not-sell" className="underline">
+              Do Not Sell or Share My Personal Information
+            </Link>{" "}
+            or by rejecting non-essential cookies in our banner.
+          </p>
+          <p>
+            <strong>Global Privacy Control.</strong> We honor the{" "}
+            <a href="https://globalprivacycontrol.org/" target="_blank" rel="noreferrer" className="underline">
+              Global Privacy Control
+            </a>{" "}
+            signal as a valid opt-out of sharing for cross-context behavioral
+            advertising. If your browser sends a GPC signal, we will not load
+            the Meta Pixel and will not transmit identifiers to Meta for
+            advertising measurement, regardless of your cookie-banner choice.
+          </p>
         </section>
 
         <section>
           <h2 className="font-display text-xl font-bold text-brand-blue-ink">5. Retention</h2>
           <ul className="list-disc space-y-2 pl-6">
-            <li>Lead form submissions: 24 months from last contact, then deleted.</li>
+            <li>
+              Lead form submissions and consent records: 4 years from last
+              contact, matching the federal TCPA statute-of-limitations window,
+              then deleted.
+            </li>
             <li>Client call recordings: 90 days by default, unless a longer period is agreed.</li>
             <li>Client call transcripts: 12 months, unless a longer period is agreed.</li>
             <li>

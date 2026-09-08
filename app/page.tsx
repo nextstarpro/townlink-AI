@@ -419,6 +419,10 @@ export default function Home() {
           <a href="/privacy" className="hover:text-brand-blue-ink">privacy</a>
           {" · "}
           <a href="/terms" className="hover:text-brand-blue-ink">terms</a>
+          {" · "}
+          <a href="/do-not-sell" className="hover:text-brand-blue-ink">
+            do not sell or share
+          </a>
           {" · ai voice interactions are disclosed at the start of every call"}
         </span>
         <span className="normal-case tracking-normal md:col-span-3 md:text-center">

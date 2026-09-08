@@ -47,9 +47,12 @@ export async function POST(req: NextRequest) {
   const fbp = req.cookies.get("_fbp")?.value;
   const fbc = req.cookies.get("_fbc")?.value;
   const sourceUrl = req.headers.get("referer") ?? "https://townlink.ai";
+  const gpc = req.headers.get("sec-gpc") === "1";
 
   const [metaResult, crmResult] = await Promise.allSettled([
-    postToMetaCAPI({ email, phone, name, eventId, eventTime, clientIp, userAgent, fbp, fbc, sourceUrl }),
+    gpc
+      ? Promise.resolve({ skipped: "GPC opt-out signal received" })
+      : postToMetaCAPI({ email, phone, name, eventId, eventTime, clientIp, userAgent, fbp, fbc, sourceUrl }),
     postToCRM({ name, email, phone, businessType, headache, consent, eventId }),
   ]);
 

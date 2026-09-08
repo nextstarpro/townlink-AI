@@ -10,14 +10,30 @@ declare global {
   interface Window {
     fbq?: (...args: unknown[]) => void;
   }
+  interface Navigator {
+    globalPrivacyControl?: boolean;
+  }
+}
+
+function gpcOptOut(): boolean {
+  if (typeof navigator === "undefined") return false;
+  return navigator.globalPrivacyControl === true;
 }
 
 export default function MetaPixel() {
   const [allowed, setAllowed] = useState(false);
 
   useEffect(() => {
+    if (gpcOptOut()) {
+      setAllowed(false);
+      return;
+    }
     setAllowed(readConsent() === "accepted");
     const onChange = (e: Event) => {
+      if (gpcOptOut()) {
+        setAllowed(false);
+        return;
+      }
       const detail = (e as CustomEvent).detail;
       setAllowed(detail === "accepted");
     };

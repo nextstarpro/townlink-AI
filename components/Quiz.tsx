@@ -196,13 +196,13 @@ export default function Quiz() {
                   className="mt-1 h-4 w-4 accent-brand-blue"
                 />
                 <span>
-                  I have read the{" "}
-                  <a href="/privacy" target="_blank" className="underline">
-                    Privacy Policy
-                  </a>{" "}
-                  and{" "}
+                  I agree to the{" "}
                   <a href="/terms" target="_blank" className="underline">
                     Terms of Service
+                  </a>{" "}
+                  (including the binding-arbitration and class-action-waiver clauses) and the{" "}
+                  <a href="/privacy" target="_blank" className="underline">
+                    Privacy Policy
                   </a>
                   .
                 </span>
