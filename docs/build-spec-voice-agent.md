@@ -90,6 +90,43 @@ Additional behavior:
 - No agent may initiate outbound contact to a number the client cannot
   produce prior-express-written-consent records for on request.
 
+### 5.1 Old-list text-back — consent attestation gate
+
+The "old-list text-back" product surface (dormant-list SMS reactivation
+campaign) is the single highest-exposure TCPA surface we operate. Before
+any such campaign is scheduled for a client, the client-onboarding
+intake must capture **one** of the following, and ops must confirm it
+is on file:
+
+- **(a) Signed attestation.** A written attestation from the client
+  confirming that every contact on the uploaded list has prior express
+  written consent to receive marketing SMS from the client's business,
+  identifying the consent event (form submission, checkbox at
+  point-of-sale, signed intake, etc.) and the approximate date range.
+- **(b) Opt-in-check first message.** In lieu of (a), the first
+  message in the sequence must function as an opt-in check, not as a
+  marketing message. Approved template:
+  > "Hi [First Name], it's [Business Name] — it's been a while.
+  > Reply YES if you'd like to hear about [offer], reply STOP to opt
+  > out. Msg&data rates may apply."
+  Only contacts who reply YES may receive subsequent marketing sends.
+
+The attestation record (or the opt-in-check reply log) must be
+retained with the campaign log and linked to the send by campaign ID
+for the duration set in §4 (life of engagement + 4 years).
+
+**This is a hard gate at the ops layer, not a soft warning.** No
+dormant-list campaign may be scheduled without one of the above on
+file. The public landing page copy commits us to this ("We confirm
+client consent before any list goes out; this isn't a cold blast.");
+this section is what makes that commitment true.
+
+Rationale: TCPA §227(b) prior-express-written-consent requirement
+attaches to the party on whose behalf the calls/texts are made. If a
+client hands us a list without a valid consent chain, the LOL
+carve-outs in Terms §8(c) do not save us from a class action — under
+FCC agency principles we are treated as the "maker" of the calls.
+
 ## 6. STOP / DNC handling
 
 - **SMS STOP:** honored within one message cycle (i.e. the next queued

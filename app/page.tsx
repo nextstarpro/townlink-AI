@@ -4,12 +4,12 @@ import Quiz from "@/components/Quiz";
 const BLEED = [
   {
     line: "call answered by voicemail",
-    detail: "Roughly 6 in 10 calls to small service businesses go unanswered (Invoca / Marchex industry data). The next name on Google picks up.",
+    detail: "Roughly 6 in 10 calls to small service businesses go unanswered (Invoca / Marchex industry data — industry-wide, not TownLink-measured). The next name on Google picks up.",
     stat: "~60%",
   },
   {
     line: "hours on quotes, invoices, follow-ups",
-    detail: "Small-business teams spend around 40% of the workday on admin (HubSpot / APQC surveys). It's payroll, going out the back door.",
+    detail: "Small-business teams spend around 40% of the workday on admin (HubSpot / APQC surveys — industry-wide, not TownLink-measured). It's payroll, going out the back door.",
     stat: "~40%",
   },
   {
@@ -40,7 +40,7 @@ const INSTALLS = [
   {
     name: "Old-list text-back",
     outcome:
-      "A one-off AI text campaign against your dormant list. Personalized, sent at a real hour on a real day. Booked jobs — not blasted texts.",
+      "A one-off AI text campaign against your dormant list. Personalized, sent at a real hour on a real day. Booked jobs — not blasted texts. We confirm client consent before any list goes out; this isn't a cold blast.",
   },
   {
     name: "Admin & follow-up copilot",
@@ -284,11 +284,12 @@ export default function Home() {
               id="recovered"
               className="max-w-[18ch] font-display text-4xl font-extrabold md:text-5xl"
             >
-              What thirty days can look like for an HVAC contractor.
+              Here's what thirty days could look like.
             </h2>
             <p className="mt-6 max-w-[48ch] text-text-muted">
-              Missed calls captured, one text-back to a dormant list, both live in under two weeks.
-              Actual results depend on your call volume, list size, and your existing consent chain.
+              Illustrative example. Missed calls captured, one text-back to a dormant list, both
+              live in under two weeks. Actual results depend on your call volume, list size, and
+              your existing consent chain.
             </p>
             <p className="mt-4 inline-block border border-brand-green-line bg-brand-green-soft px-2.5 py-1 font-mono text-[10px] uppercase tracking-wider text-brand-green-ink">
               hypothetical · not a verified client result
