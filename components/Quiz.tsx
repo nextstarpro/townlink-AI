@@ -25,6 +25,7 @@ export default function Quiz() {
   const [businessType, setBusinessType] = useState("");
   const [headache, setHeadache] = useState("");
   const [form, setForm] = useState({ name: "", email: "", phone: "" });
+  const [consent, setConsent] = useState({ contact: false, terms: false });
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -36,7 +37,17 @@ export default function Quiz() {
       const res = await fetch("/api/lead", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ ...form, businessType, headache }),
+        body: JSON.stringify({
+          ...form,
+          businessType,
+          headache,
+          consent: {
+            contactByPhoneSmsEmail: consent.contact,
+            termsAccepted: consent.terms,
+            ts: Date.now(),
+            userAgent: typeof navigator !== "undefined" ? navigator.userAgent : "",
+          },
+        }),
       });
       const json = await res.json();
       if (!res.ok || !json.ok) throw new Error(json.error ?? "Submission failed");
@@ -160,11 +171,48 @@ export default function Quiz() {
                 className="border-b border-brand-blue-ink bg-transparent py-2 text-lg font-medium text-text-body focus:outline-none focus:border-b-2"
               />
             </label>
+            <fieldset className="mt-2 grid gap-3 border-t border-brand-green-line pt-4">
+              <legend className="sr-only">Consent</legend>
+              <label className="grid grid-cols-[auto_1fr] items-start gap-3 text-sm text-text-body">
+                <input
+                  type="checkbox"
+                  required
+                  checked={consent.contact}
+                  onChange={(e) => setConsent((c) => ({ ...c, contact: e.target.checked }))}
+                  className="mt-1 h-4 w-4 accent-brand-blue"
+                />
+                <span>
+                  I agree TownLink Global (NextStar Procurement LLC) may contact me by phone,
+                  SMS, and email about my estimate. Message and data rates may apply. Reply
+                  STOP to opt out.
+                </span>
+              </label>
+              <label className="grid grid-cols-[auto_1fr] items-start gap-3 text-sm text-text-body">
+                <input
+                  type="checkbox"
+                  required
+                  checked={consent.terms}
+                  onChange={(e) => setConsent((c) => ({ ...c, terms: e.target.checked }))}
+                  className="mt-1 h-4 w-4 accent-brand-blue"
+                />
+                <span>
+                  I have read the{" "}
+                  <a href="/privacy" target="_blank" className="underline">
+                    Privacy Policy
+                  </a>{" "}
+                  and{" "}
+                  <a href="/terms" target="_blank" className="underline">
+                    Terms of Service
+                  </a>
+                  .
+                </span>
+              </label>
+            </fieldset>
             {error && <p className="font-mono text-sm text-red-600">error · {error}</p>}
             <div className="mt-4 flex items-center gap-4">
               <button
                 type="submit"
-                disabled={submitting}
+                disabled={submitting || !consent.contact || !consent.terms}
                 className="bg-cta px-7 py-4 font-semibold text-cta-fg shadow-cta transition hover:bg-cta-hover hover:shadow-cta-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cta-ring disabled:opacity-60"
               >
                 {submitting ? "Sending" : "Send my estimate"}

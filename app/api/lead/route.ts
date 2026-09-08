@@ -11,6 +11,12 @@ type LeadPayload = {
   phone: string;
   businessType: string;
   headache: string;
+  consent?: {
+    contactByPhoneSmsEmail?: boolean;
+    termsAccepted?: boolean;
+    ts?: number;
+    userAgent?: string;
+  };
 };
 
 function bad(msg: string, status = 400) {
@@ -25,8 +31,11 @@ export async function POST(req: NextRequest) {
     return bad("Invalid JSON");
   }
 
-  const { name, email, phone, businessType, headache } = body;
+  const { name, email, phone, businessType, headache, consent } = body;
   if (!name || !email || !phone) return bad("Missing name, email, or phone");
+  if (!consent?.contactByPhoneSmsEmail || !consent?.termsAccepted) {
+    return bad("Consent required: contact permission and terms acceptance.");
+  }
 
   const eventId = newEventId();
   const eventTime = Math.floor(Date.now() / 1000);
@@ -41,7 +50,7 @@ export async function POST(req: NextRequest) {
 
   const [metaResult, crmResult] = await Promise.allSettled([
     postToMetaCAPI({ email, phone, name, eventId, eventTime, clientIp, userAgent, fbp, fbc, sourceUrl }),
-    postToCRM({ name, email, phone, businessType, headache, eventId }),
+    postToCRM({ name, email, phone, businessType, headache, consent, eventId }),
   ]);
 
   return NextResponse.json({

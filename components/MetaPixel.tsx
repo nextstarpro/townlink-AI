@@ -1,6 +1,8 @@
 "use client";
 
 import Script from "next/script";
+import { useEffect, useState } from "react";
+import { CONSENT_EVENT, readConsent } from "./ConsentBanner";
 
 const PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID;
 
@@ -11,7 +13,19 @@ declare global {
 }
 
 export default function MetaPixel() {
-  if (!PIXEL_ID) return null;
+  const [allowed, setAllowed] = useState(false);
+
+  useEffect(() => {
+    setAllowed(readConsent() === "accepted");
+    const onChange = (e: Event) => {
+      const detail = (e as CustomEvent).detail;
+      setAllowed(detail === "accepted");
+    };
+    window.addEventListener(CONSENT_EVENT, onChange);
+    return () => window.removeEventListener(CONSENT_EVENT, onChange);
+  }, []);
+
+  if (!PIXEL_ID || !allowed) return null;
   return (
     <>
       <Script id="fb-pixel" strategy="lazyOnload">

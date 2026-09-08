@@ -391,10 +391,15 @@ export default function Home() {
           {" · "}
           <a href="mailto:info@townlinkglobal.com" className="hover:text-brand-blue-ink">info@townlinkglobal.com</a>
         </span>
+        <span className="md:col-span-3 md:text-center">
+          <a href="/privacy" className="hover:text-brand-blue-ink">privacy</a>
+          {" · "}
+          <a href="/terms" className="hover:text-brand-blue-ink">terms</a>
+          {" · ai voice interactions are disclosed at the start of every call"}
+        </span>
         <span className="normal-case tracking-normal md:col-span-3 md:text-center">
           Stats cited from public industry sources (Invoca, Marchex, HubSpot, APQC). Example figures on this
-          page are illustrative unless a client is named and quoted. AI voice interactions are disclosed on
-          every call; outbound campaigns run only against contacts the client attests are consented.
+          page are illustrative unless a client is named and quoted.
         </span>
       </footer>
     </main>
