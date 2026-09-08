@@ -279,7 +279,7 @@ export default function Home() {
       >
         <div className="grid gap-12 md:grid-cols-[1fr_1.1fr] md:items-center">
           <div>
-            <p className="seq mb-4">005 · what thirty days looks like</p>
+            <p className="seq mb-4">005 · what thirty days could look like</p>
             <h2
               id="recovered"
               className="max-w-[18ch] font-display text-4xl font-extrabold md:text-5xl"
