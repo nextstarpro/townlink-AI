@@ -12,9 +12,6 @@ const UPDATED = "2026-09-08";
 export default function PrivacyPage() {
   return (
     <main className="mx-auto max-w-3xl px-5 py-16 md:px-10 md:py-24">
-      <p className="mb-3 inline-block border-2 border-slate-900 bg-brand-green-soft px-2.5 py-1 font-mono text-[10px] uppercase tracking-wider text-brand-green-ink">
-        Draft — for attorney review. Not legal advice.
-      </p>
       <h1 className="mb-2 font-display text-3xl font-extrabold text-brand-blue-ink md:text-5xl">
         Privacy Policy
       </h1>

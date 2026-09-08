@@ -13,6 +13,7 @@ const BUSINESS_TYPES = [
 
 const HEADACHES = [
   "Phone rings, nobody answers",
+  "Inbox is buried — quotes slip through",
   "Old customer list going stale",
   "Web leads go cold before I reply",
   "Scheduling eats the morning",

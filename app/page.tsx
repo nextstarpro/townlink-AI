@@ -55,6 +55,10 @@ const FAQ = [
     a: "Yes. We forward or ring-in-parallel with your current line. You don't port anything, publish a new number, or hand out a second one to customers.",
   },
   {
+    q: "What if my main problem is email, not the phone?",
+    a: "Same receptionist, different channel. It reads the inbox, answers the routine ones (pricing, availability, quote requests) in your voice, and puts the rest on your desk sorted by urgency. Every draft goes to your review before it sends — until you tell it to run on its own.",
+  },
+  {
     q: "What actually happens in the first 14 days?",
     a: "Days 1–3: the text-back to your old list gets drafted and sent. Days 4–10: your receptionist's voice is tuned to your business and integrations are wired in. Days 10–14: dry-run against test calls, then flip live. You approve every step.",
   },
@@ -112,10 +116,11 @@ export default function Home() {
             done-for-you · we build it, wire it into your existing phone + calendar, and run it
           </p>
           <p className="mt-6 max-w-[54ch] text-lg text-text-muted md:text-xl">
-            A 24/7 AI receptionist that typically picks up in the first few rings, books straight to
-            your calendar, and texts your old customer list to book the ones ready to buy again. We
-            wire it into the phone number and calendar you already use. You approve the voice. Your
-            team keeps working the way they do now.
+            A 24/7 AI receptionist that typically picks up in the first few rings — and an inbox
+            that writes back before the lead has time to shop around. Books straight to your
+            calendar. Texts your old customer list to bring back the ones ready to buy again. We
+            wire it into the phone number, inbox, and calendar you already use. You approve the
+            voice. Your team keeps working the way they do now.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-6">
